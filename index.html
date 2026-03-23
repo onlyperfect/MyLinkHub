@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="auto">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Loading...</title>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-02ZN82S10H"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-02ZN82S10H');
+</script>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
+
+body{
+background:#000 url('https://raw.githubusercontent.com/luciaadrianex/hooareyou/main/fotos/hooarey.jpeg') no-repeat center/cover;
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+color:#fff;
+}
+
+.card{
+background:rgba(0,0,0,.82);
+backdrop-filter:blur(14px);
+padding:40px;
+border-radius:20px;
+max-width:420px;
+width:100%;
+box-shadow:0 0 45px rgba(255,0,80,.6);
+text-align:center;
+animation:fade .8s ease;
+border:1px solid rgba(255,0,80,.3);
+}
+
+@keyframes fade{
+from{opacity:0;transform:translateY(25px)}
+to{opacity:1}
+}
+
+h1{
+font-size:1.8rem;
+font-weight:800;
+margin-bottom:15px;
+}
+
+.loader{
+margin-top:20px;
+border:4px solid rgba(255,255,255,0.2);
+border-top:4px solid #ff0033;
+border-radius:50%;
+width:40px;
+height:40px;
+animation:spin 1s linear infinite;
+margin-left:auto;
+margin-right:auto;
+}
+
+@keyframes spin{
+0%{transform:rotate(0deg)}
+100%{transform:rotate(360deg)}
+}
+
+.small{
+font-size:.75rem;
+opacity:.7;
+margin-top:15px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+    <h1 id="message">Loading...</h1>
+    <div class="loader"></div>
+    <div class="small" id="sub"></div>
+</div>
+
+<script>
+// Detectar idioma
+const lang = navigator.language || navigator.userLanguage;
+
+// Textos por idioma
+const texts = {
+    pt: {
+        msg: "Aguarde... Estamos preparando tudo para você.",
+        sub: "Conectando você agora 🔥"
+    },
+    en: {
+        msg: "Please wait... We're getting everything ready for you.",
+        sub: "Connecting you now 🔥"
+    },
+    es: {
+        msg: "Espera... Estamos preparando todo para ti.",
+        sub: "Conectándote ahora 🔥"
+    }
+};
+
+// Definir idioma base
+let userLang = "en";
+if (lang.startsWith("pt")) userLang = "pt";
+else if (lang.startsWith("es")) userLang = "es";
+
+// Aplicar texto
+document.getElementById("message").innerText = texts[userLang].msg;
+document.getElementById("sub").innerText = texts[userLang].sub;
+
+// Redirecionamento automático
+setTimeout(() => {
+    window.location.href = "https://bggceig.datesstor.com/s/ea626a068933d";
+}, 2500); // 2.5 segundos
+</script>
+
+</body>
+</html>
